@@ -7,4 +7,5 @@ import com.strategies.sv.strategies.app.entities.Usuario;
 @Repository
 public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
 
+	Usuario findByNombreUsuario(String username);
 }
