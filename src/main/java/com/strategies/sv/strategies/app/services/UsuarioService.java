@@ -12,8 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import com.fasterxml.jackson.databind.module.SimpleAbstractTypeResolver;
 import com.strategies.sv.strategies.app.entities.Usuario;
 import com.strategies.sv.strategies.app.repositories.UsuarioRepository;
 

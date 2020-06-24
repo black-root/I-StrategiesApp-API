@@ -18,7 +18,7 @@ import com.strategies.sv.strategies.app.services.UsuarioService;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping(value = "/api/strategies/usuario")
+@RequestMapping(value = "/api/strategies/usuarios")
 public class UsuarioController {
 
 	
