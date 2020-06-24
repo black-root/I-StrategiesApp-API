@@ -1,9 +1,11 @@
 package com.strategies.sv.strategies.app.entities;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Random;
 
+import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,7 @@ public class UsuarioTests {
 	@Autowired
 	private BCryptPasswordEncoder encoder;
 	
+	
 	@Test
 	public void createUsuarioConUsernameYClaveCorrecta() {
 		Usuario u = new Usuario();
@@ -36,5 +39,20 @@ public class UsuarioTests {
 		
 		assertTrue(retorno.getClave().equalsIgnoreCase(u.getClave()));
 	}
+	
+	@Test
+	public void loginTestCorrectPassword() {
+		boolean result = repo.login("Luis51", "1234");
+		System.out.println("Resultado "+ result);
+		assertTrue(result);
+	}
+	
+	@Test
+	public void loginTestIncorrectPassword() {
+		boolean result = repo.login("Luis51", "12345");
+		System.out.println("Resultado "+ result);
+		assertFalse(result);
+	}
+	
 	
 }
