@@ -11,5 +11,5 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
 	Usuario findByNombreUsuario(String username);
 	
 	@Query(value = "SELECT testing(?, ?)", nativeQuery = true)
-	boolean login(String username, String clave);
+	boolean login(String username, Integer clave);
 }

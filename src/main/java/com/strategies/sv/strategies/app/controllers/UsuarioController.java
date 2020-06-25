@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.strategies.sv.strategies.app.entities.RespuestaLogin;
 import com.strategies.sv.strategies.app.entities.Usuario;
 import com.strategies.sv.strategies.app.services.UsuarioService;
 
@@ -25,14 +26,13 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService service;
 	
-	@GetMapping("/login")
-	public String login(){
-		return "authenticated successfully";
+	@GetMapping("/login/{username:[\\w]{6,12}}&{clave:[\\d]+}")
+	public ResponseEntity<RespuestaLogin> login(@PathVariable("username") String username, @PathVariable("clave") Integer clave){
+		return new ResponseEntity<>(service.login(username, clave),HttpStatus.ACCEPTED);
 	}
 	
 	@GetMapping
 	public Iterable<Usuario> findAllUsuario(){
-		
 		return service.findAll();
 	}
 	

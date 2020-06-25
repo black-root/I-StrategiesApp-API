@@ -24,13 +24,13 @@ public class Persona implements Serializable {
 	@Column(name = "PrimerNombre", nullable = false)
 	private String primerNombre;
 
-	@Column(name = "SegundoNombre", nullable = true)
+	@Column(name = "SegundoNombre")
 	private String segundoNombre;
 
 	@Column(name = "PrimerApellido", nullable = false)
 	private String primerApellido;
 
-	@Column(name = "SegundoApellido", nullable = true)
+	@Column(name = "SegundoApellido")
 	private String segundoApellido;
 	
 	@Column(name = "FechaNacimiento", nullable = false)
